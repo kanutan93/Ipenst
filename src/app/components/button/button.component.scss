@@ -1,10 +1,10 @@
-.btn-default {
+.btn-default, .btn-reverse:hover {
   color: #f5713e !important;
   border: 1px solid #f5713e;
   background: #ffffff;
 }
 
-.btn-default:hover {
+.btn-default:hover, .btn-reverse {
   background-color: #f5713e;
   border-color: #f5713e;
   color: #ffffff !important;
@@ -22,7 +22,6 @@
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 10px 10px 0;
-  border: 1px solid;
   font-size: 12px;
   padding: 7px 12px 8px;
   overflow: hidden;

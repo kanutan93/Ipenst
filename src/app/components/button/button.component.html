@@ -1,1 +1,4 @@
-<a (click)=onClick() class="btn btn-default white btn-xs">{{text || 'test'}}</a>
+<a (click)=onClick() class="btn white btn-xs" [ngClass]="{
+    'btn-reverse':reverseColor,
+    'btn-default':!reverseColor
+  }">{{text || 'test'}}</a>
