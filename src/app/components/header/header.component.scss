@@ -1,6 +1,6 @@
 .top-description {
   color: #95979a;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 16px;
   padding: 29px 0 0 37px;
 }
@@ -104,6 +104,10 @@ a {
   margin-right: auto!important;
   max-width: 1008px;
   position: relative;
+  border-bottom: 1px solid rgba(149, 151, 154, .3);
+  @media only screen and(max-width: 767px) {
+    border-bottom: 2px solid #f5713e;
+  }
   width: 100%;
 }
 

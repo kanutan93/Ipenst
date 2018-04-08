@@ -1,0 +1,22 @@
+.ui.menu {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+  border: 0;
+}
+
+.item {
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 15px 20px 16px;
+  position: relative;
+  text-transform: uppercase;
+  &:before {
+    width: 0!important;
+  }
+}
