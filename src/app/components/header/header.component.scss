@@ -10,6 +10,12 @@
   line-height: 87px;
   position: relative;
   z-index: 10;
+  @media only screen and (max-width: 767px) {
+    & {
+      height: 65px!important;
+      line-height: 57px!important;
+    }
+  }
   & img {
     max-height: 50px;
     padding-left: 10px;
@@ -29,11 +35,19 @@
 
 .top-callback {
   padding: 30px 0 0;
+
   line-height: 28px;
   padding-right: 10px;
+  @media only screen and (max-width: 765px) {
+    & {
+      margin-right: 16px;
+      padding: 18px 0 0;
+    }
+  }
   & .phone {
     font-size: 20px;
     margin-right: 17px;
+    font-weight: bold;
     & .fa {
       background-color: #f5713e;
       border-radius: 18px;
@@ -93,3 +107,22 @@ a {
   width: 100%;
 }
 
+.btn.btn-responsive-nav {
+  margin-right: 16px!important;
+  top: -7px;
+  &:hover {
+    color: #f5713e;
+    border: 1px solid #f5713e;
+    background-color: #ffffff;
+    padding: 4px 7px 2px;
+  }
+  & .fa {
+    font-size: 21px;
+  }
+  background-color: #f5713e;
+  position: relative;
+  color: #FFF;
+  z-index: 15;
+  padding: 5px 8px 3px;
+  border: medium none;
+}
