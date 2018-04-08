@@ -10,6 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ButtonComponent } from './components/button/button.component';
 import { MenuComponent } from './components/menu/menu.component';
 import {SuiModule} from 'ng2-semantic-ui';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent}
@@ -21,7 +22,8 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     ButtonComponent,
-    MenuComponent
+    MenuComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
