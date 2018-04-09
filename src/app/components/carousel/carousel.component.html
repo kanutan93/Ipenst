@@ -3,14 +3,16 @@
     <img [src]="'assets/carousel/' + item.background" alt="Random first slide">
     <div class="item-carousel">
       <div class="row">
-        <div class="col-6 text">
+        <div class="col-lg-6 col-md-12 text">
             <div class="title">{{item.title}}</div>
             <div class="text-block">
               {{item.description}}
             </div>
-            <app-button [text]="'Узнать больше'" [reverseColor]="true"></app-button>
+            <div class="more-button">
+              <app-button [text]="'Узнать больше'" [reverseColor]="true"></app-button>
+            </div>
         </div>
-        <div class="col-6 image">
+        <div class="col-lg-6 image d-none d-lg-block">
           <img [src]="'assets/carousel/' + item.src">
         </div>
       </div>
