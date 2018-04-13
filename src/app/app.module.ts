@@ -15,6 +15,7 @@ import { TitleComponent } from './components/title/title.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PhoneComponent } from './components/phone/phone.component';
 import { ConsultationBlockComponent } from './components/consultation-block/consultation-block.component';
+import { LeftMenuComponent } from './components/left-menu/left-menu.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent}
@@ -31,7 +32,8 @@ const routes: Routes = [
     TitleComponent,
     FooterComponent,
     PhoneComponent,
-    ConsultationBlockComponent
+    ConsultationBlockComponent,
+    LeftMenuComponent
   ],
   imports: [
     BrowserModule,

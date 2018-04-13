@@ -1,0 +1,7 @@
+<aside class="sidebar">
+  <ul class="nav nav-list side-menu">
+    <li [class]="item === currentItem ? 'active' : ''" *ngFor="let item of items">
+      <a>{{item.title}}</a>
+    </li>
+  </ul>
+</aside>
