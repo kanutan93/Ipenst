@@ -1,0 +1,14 @@
+
+.styled-block{
+  border-left: 2px solid #f5713e;
+  background: url(assets/styled-block/background.png) #eaf0f2 0 0 repeat;
+  color: #2f383d;
+  margin-bottom: 40px;
+  clear: both;
+  margin-top: 30px;
+  padding: 37px 50px;
+  font-size: 13px;
+  &.front {
+    margin-bottom: 56px;
+  }
+}

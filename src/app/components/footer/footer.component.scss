@@ -1,0 +1,45 @@
+.max-width {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  max-width: 1008px;
+  position: relative;
+  border-bottom: 1px solid rgba(149, 151, 154, .3);
+  @media only screen and(max-width: 767px) {
+    border-bottom: 2px solid #f5713e;
+  }
+  width: 100%;
+}
+
+footer {
+  background: none repeat scroll 0 0 #2c364a;
+  box-shadow: 0 70px 50px -20px #213040 inset;
+  clear: both;
+  color: #969ba5;
+  font-size: 12px;
+  line-height: 18px;
+  min-height: 120px;
+  padding: 0;
+  position: relative;
+
+  & .copy {
+    width: 120px;
+    padding: 21px 0;
+  }
+
+  & .bottom-menu{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 22px;
+    text-transform: uppercase;
+  }
+
+  & .info {
+    padding: 21px 0;
+    color: #fff;
+  }
+
+  & .phone {
+    padding: 21px 0;
+  }
+}

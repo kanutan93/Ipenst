@@ -1,0 +1,28 @@
+<footer>
+  <div class="maxwidth">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="copy">
+              © 2018 Все права защищены.
+           </div>
+          </div>
+         <div class="col-lg-6 col-8 col-xs-4">
+            <div class="bottom-menu">
+              <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-4" *ngFor="let item of items">
+                  {{item.title}}
+                </div>
+              </div>
+           </div>
+          </div>
+        <div class="col-lg-3 col-4 col-xs-8">
+          <div class="phone">
+            <app-phone [isSmall]="true"></app-phone>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
+</footer>
+

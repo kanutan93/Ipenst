@@ -44,43 +44,6 @@
       padding: 18px 0 0;
     }
   }
-  & .phone {
-    font-size: 20px;
-    margin-right: 17px;
-    font-weight: bold;
-    & .fa {
-      background-color: #f5713e;
-      border-radius: 18px;
-      color: #fff;
-      font-size: 16px;
-      margin: 0 5px;
-      padding: 6px 8px;
-      vertical-align: top;
-    }
-    & .phone-number {
-      font-weight: 500;
-      line-height: 21px;
-      text-align: right;
-      @media only screen and (max-width: 530px) {
-        & {font-size: 14px;}
-      }
-      @media only screen and (max-width: 430px) {
-        & {font-size: 11px;}
-      }
-      & > a {
-        color: #222;
-      }
-    }
-    & .phone-desc {
-      color: #95979a;
-      font-size: 11px;
-      line-height: 12px;
-      margin-top: -2px;
-      text-align: right;
-      max-width: 310px;
-      margin-bottom: 18px;
-    }
-  }
 }
 
 

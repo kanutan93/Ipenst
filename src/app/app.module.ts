@@ -11,6 +11,10 @@ import { ButtonComponent } from './components/button/button.component';
 import { MenuComponent } from './components/menu/menu.component';
 import {SuiModule} from 'ng2-semantic-ui';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { TitleComponent } from './components/title/title.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PhoneComponent } from './components/phone/phone.component';
+import { ConsultationBlockComponent } from './components/consultation-block/consultation-block.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent}
@@ -23,7 +27,11 @@ const routes: Routes = [
     HeaderComponent,
     ButtonComponent,
     MenuComponent,
-    CarouselComponent
+    CarouselComponent,
+    TitleComponent,
+    FooterComponent,
+    PhoneComponent,
+    ConsultationBlockComponent
   ],
   imports: [
     BrowserModule,

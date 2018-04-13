@@ -15,20 +15,8 @@ export class MenuComponent implements OnInit {
           title: 'О компании'
         },
         {
-          title: 'Лицензия и сертификаты'
-        },
-        {
-          title: 'Отзывы клиентов'
-        },
-        {
           title: 'Вендоры'
         },
-        {
-          title: 'Вакансии'
-        },
-        {
-          title: 'Реквизиты'
-        }
       ]
     },
     {
@@ -38,30 +26,15 @@ export class MenuComponent implements OnInit {
           title: 'Информационная безопасность'
         },
         {
-          title: 'Microsoft'
-        },
-        {
           title: 'Сети передачи данных'
         },
         {
-          title: 'Коммуникации'
-        },
-        {
-          title: 'Облака'
-        },
-        {
           title: 'Документооборот'
-        },
-        {
-          title: 'Решения по телефонизации компаний'
-        },
+        }
       ]
     },
     {
       title: 'Пресс-центр'
-    },
-    {
-      title: 'Учебный центр'
     },
     {
       title: 'Контакты'

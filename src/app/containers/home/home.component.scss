@@ -1,0 +1,107 @@
+.home-content {
+  margin-top: 39px;
+  & .item {
+    margin: 13px 13px 48px;
+    height: 230px;
+    @media only screen and (max-width: 767px) {
+      height: 93px;
+      margin-bottom: 13px;
+    }
+    & .title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      height: 18px;
+      &:hover {
+        cursor: pointer;
+      }
+      & a {
+        color: #f5713e;
+      }
+    }
+    & .image {
+      @media only screen and (max-width: 767px) {
+        float: left;
+        height: 70px;
+        line-height: 67px;
+        max-height: 70px;
+        max-width: 105px;
+        text-align: center;
+        margin-right: 13px;
+        width: 105px;
+      }
+      height: 133px;
+      line-height: 133px;
+      margin-bottom: 18px;
+      text-align: left;
+      width: 200px;
+      &:hover {
+        cursor: pointer;
+      }
+      & img {
+        vertical-align: middle;
+        max-height: 100%;
+        max-width: 100%;
+        display: inline-block;
+        zoom: 1;
+      }
+    }
+  }
+
+}
+
+
+.news {
+  & .item {
+    height: 93px;
+    margin-bottom: 13px;& .title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    height: 18px;
+    &:hover {
+      cursor: pointer;
+    }
+    & a {
+      color: #f5713e;
+    }
+  }
+    & .image {
+      float: left;
+      height: 70px;
+      line-height: 67px;
+      max-height: 70px;
+      max-width: 105px;
+      text-align: center;
+      margin-right: 13px;
+      width: 105px;
+      &:hover {
+        cursor: pointer;
+      }
+      & img {
+        vertical-align: middle;
+        max-height: 100%;
+        max-width: 100%;
+        display: inline-block;
+        zoom: 1;
+      }
+    }
+  }
+}
+
+.news-button {
+  float: right;
+  margin-top: 20px;
+}
+
+.max-width {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  max-width: 1008px;
+  position: relative;
+  border-bottom: 1px solid rgba(149, 151, 154, .3);
+  @media only screen and(max-width: 767px) {
+    border-bottom: 2px solid #f5713e;
+  }
+  width: 100%;
+}

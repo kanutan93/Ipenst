@@ -1,1 +1,65 @@
-<app-header></app-header>
+<app-carousel></app-carousel>
+
+<div class="max-width">
+  <app-title [title]="'Услуги'"></app-title>
+  <div class="row home-content">
+    <div class="col-lg-4 col-md-6 col-xs-12" *ngFor="let item of items">
+      <div class="item">
+        <div class="image">
+          <img [src]="'assets/home/' + item.imgSrc">
+        </div>
+        <div class="info">
+          <div class="title">
+            <a>{{item.title}}</a>
+          </div>
+          <div class="text">
+            {{item.description}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-consultation-block></app-consultation-block>
+
+
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <app-title [title]="'О компании'"></app-title>
+          <p style="text-align: justify;">
+            Компания "Axxtel" является одним из ведущих игроков, работающих на рынке информационных технологий и телекоммуникаций. История компании началась в 2007 году.
+          </p>
+          <p style="text-align: justify;">
+          </p>
+          <p style="text-align: justify;">
+            С момента основания наиболее важными ориентирами компании "Axxtel" являются <b>доверие и благодарность Заказчиков</b>. Мы творчески и ответственно подходим к поставленным задачам. предлагая максимально эффективные методы их реализации.
+          </p>
+          <p style="text-align: justify;">
+          </p>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="news front">
+            <app-title [title]="'Все новости'"></app-title>
+            <app-button [text]="'Новости'" class="news-button"></app-button>
+            <div class="col-md-12 col-sm-12" *ngFor="let item of news">
+              <div class="item">
+                <div class="image">
+                 <img [src]="'assets/news/' + item.imgSrc">
+                </div>
+                <div class="info">
+                  <div class="title">
+                    <a>
+                      {{item.title}}
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
