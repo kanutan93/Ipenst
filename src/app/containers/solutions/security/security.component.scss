@@ -1,0 +1,38 @@
+.detail-image {
+  float: none;
+  margin: 0 auto 20px;
+  padding: 0;
+  text-align: center;
+  max-height: 100%;
+  max-width: 100%;
+  & img {
+    border-bottom-color: #f5713e;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom: 2px solid;
+    @media only screen and (max-width: 767px) {
+      max-height: 100%;
+      max-width: 100%;
+
+    }
+  }
+}
+
+.text-lg {
+  font-size: 16px;
+}
+
+.text-italic {
+  font-style: italic;
+}
+.stat-item {
+  position: relative;
+  margin: 35px 0;
+  & img {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
