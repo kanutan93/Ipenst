@@ -1,26 +1,13 @@
 <div class="menu-container">
-  <div class="ui menu">
-    <ng-container *ngFor="let item of items">
+  <div class="ui menu" >
+    <div class="d-none d-md-block" *ngFor="let item of items">
       <ng-container *ngIf="item.subitems">
         <div class="ui pointing dropdown link item" suiDropdown>
           <span class="text">{{item.title}}</span>
           <i class="dropdown icon"></i>
           <div class="menu" suiDropdownMenu>
             <ng-container *ngFor="let subitem of item.subitems">
-              <ng-container *ngIf="subitem.subitems">
-                <a [routerLink]="subitem.routerLink">
-                  <div class="item" suiDropdown>
-                    <i class="dropdown icon"></i>
-                    <span class="text" >{{subitem.title}}</span>
-                    <div class="menu" suiDropdownMenu>
-                      <ng-container *ngFor="let subitem2 of subitem.subitems">
-                        <a class="text" [routerLink]="subitem.routerLink">{{subitem.title}}</a>
-                      </ng-container>
-                    </div>
-                  </div>
-                </a>
-              </ng-container>
-              <ng-container *ngIf="!subitem.subitems">
+              <ng-container>
                 <a [routerLink]="subitem.routerLink">
                   <div class="item">
                     <span class="text" >{{subitem.title}}</span>
@@ -34,9 +21,31 @@
       <ng-container *ngIf="!item.subitems">
         <a class="item" [routerLink]="item.routerLink">{{item.title}}</a>
       </ng-container>
-    </ng-container>
+    </div>
+    <div class="d-md-none">
+      <div class="ui pointing dropdown link item" suiDropdown>
+        <span class="text">Каталог</span>
+        <i class="dropdown icon"></i>
+        <div class="menu" suiDropdownMenu>
+          <ng-container *ngFor="let item of items">
+            <a [routerLink]="item.routerLink">
+              <div class="item">
+                <span class="text">{{item.title}}</span>
+              </div>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
     <span class="item">
-      <i class="fa fa-search"></i>
+      <sui-search placeholder="Поиск"
+                  [hasIcon]="true"
+                  [retainSelectedResult]="false"
+                  [searchDelay]="0"
+                  [options]="searchItemsLabel"
+                  (resultSelected)="onSearchSelected($event)"></sui-search>
     </span>
+
   </div>
 </div>
+

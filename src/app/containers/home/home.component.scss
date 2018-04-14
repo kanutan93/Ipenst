@@ -94,6 +94,13 @@
   margin-top: 20px;
 }
 
+.info .title a {
+  @media only screen and (max-width: 530px) {
+    font-size: 12px;
+
+  }
+}
+
 .max-width {
   margin-left: auto!important;
   margin-right: auto!important;

@@ -35,6 +35,7 @@ import {AuditComponent} from './containers/solutions/audit/audit.component';
 import { SecurityComponent } from './containers/solutions/security/security.component';
 import { SamComponent } from './containers/solutions/sam/sam.component';
 import { HostingComponent } from './containers/solutions/hosting/hosting.component';
+import {SearchService} from './services/search.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -107,7 +108,8 @@ const routes: Routes = [
     CompanySectionService,
     NewsSectionService,
     NewsService,
-    SolutionSectionService
+    SolutionSectionService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
