@@ -15,6 +15,7 @@ export class VendorsComponent implements OnInit {
   constructor(private vendorsService: VendorsService, private companySectionService: CompanySectionService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.items = this.companySectionService.getItems();
     this.vendors = this.vendorsService.getVendors();
   }

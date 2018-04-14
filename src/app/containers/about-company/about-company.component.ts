@@ -13,6 +13,7 @@ export class AboutCompanyComponent implements OnInit {
   constructor(private companySectionService: CompanySectionService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.items = this.companySectionService.getItems();
   }
 

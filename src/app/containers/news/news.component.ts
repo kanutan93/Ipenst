@@ -15,6 +15,7 @@ export class NewsComponent implements OnInit {
   constructor(private newsSectionService: NewsSectionService, private newsService: NewsService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.items = this.newsSectionService.getItems();
     this.news = this.newsService.getNews();
   }

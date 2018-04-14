@@ -13,6 +13,7 @@ export class PenetrationComponent implements OnInit {
   constructor(private solutionSectionService: SolutionSectionService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.items = this.solutionSectionService.getItems();
   }
 

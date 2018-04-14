@@ -45,12 +45,15 @@
             <app-button [text]="'Новости'" (click)="onNews($event)" class="news-button"></app-button>
             <div class="col-md-12 col-sm-12" *ngFor="let item of news">
               <div class="item">
-                <div class="image">
-                 <img [src]="'assets/news/' + item.imgSrc">
-                </div>
+                <a [routerLink]="item.routerLink">
+                  <div class="image">
+                    <img [src]="'assets/news/' + item.imgSrc">
+                  </div>
+                </a>
+
                 <div class="info">
                   <div class="title">
-                    <a>
+                    <a [routerLink]="item.routerLink">
                       {{item.title}}
                     </a>
                   </div>

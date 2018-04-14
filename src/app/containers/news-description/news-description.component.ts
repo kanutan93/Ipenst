@@ -18,6 +18,7 @@ export class NewsDescriptionComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.items = this.newsSectionService.getItems();
     this.route.params.subscribe((params: {id: string}) => {
       this.article = this.newsService.findNews(params.id.toUpperCase());

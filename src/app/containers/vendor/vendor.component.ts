@@ -18,6 +18,7 @@ export class VendorComponent implements OnInit {
               private companySectionService: CompanySectionService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.items = this.companySectionService.getItems();
     this.route.params.subscribe((params: {id: string}) => {
       this.currentItem = params.id.toUpperCase();

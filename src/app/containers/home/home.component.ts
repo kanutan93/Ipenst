@@ -55,16 +55,19 @@ export class HomeComponent implements OnInit {
   news: any[] = [
     {
       imgSrc: '1.jpg',
-      title: 'Шифровальщик WannaCry'
+      title: 'Шифровальщик WannaCry',
+      routerLink: '/news/wannacry'
     },
     {
       imgSrc: '2.jpg',
-      title: 'Омскгражданпроект защищает данные с помощью Falcongaze SecureTower'
+      title: 'Омскгражданпроект защищает данные с помощью Falcongaze SecureTower',
+      routerLink: '/news/omsk'
     }
   ]
   constructor(private router: Router) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
 
   onNews() {
