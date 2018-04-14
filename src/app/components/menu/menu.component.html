@@ -8,20 +8,24 @@
           <div class="menu" suiDropdownMenu>
             <ng-container *ngFor="let subitem of item.subitems">
               <ng-container *ngIf="subitem.subitems">
-                <div class="item" suiDropdown>
-                  <i class="dropdown icon"></i>
-                  <a class="text" [routerLink]="subitem.routerLink">{{subitem.title}}</a>
-                  <div class="menu" suiDropdownMenu>
-                    <ng-container *ngFor="let subitem2 of subitem.subitems">
-                      <a class="text" [routerLink]="subitem.routerLink">{{subitem.title}}</a>
-                    </ng-container>
+                <a [routerLink]="subitem.routerLink">
+                  <div class="item" suiDropdown>
+                    <i class="dropdown icon"></i>
+                    <span class="text" >{{subitem.title}}</span>
+                    <div class="menu" suiDropdownMenu>
+                      <ng-container *ngFor="let subitem2 of subitem.subitems">
+                        <a class="text" [routerLink]="subitem.routerLink">{{subitem.title}}</a>
+                      </ng-container>
+                    </div>
                   </div>
-                </div>
+                </a>
               </ng-container>
               <ng-container *ngIf="!subitem.subitems">
-                <div class="item">
-                  <a class="text" [routerLink]="subitem.routerLink">{{subitem.title}}</a>
-                </div>
+                <a [routerLink]="subitem.routerLink">
+                  <div class="item">
+                    <span class="text" >{{subitem.title}}</span>
+                  </div>
+                </a>
               </ng-container>
             </ng-container>
           </div>

@@ -25,3 +25,12 @@
     padding: 11px 27px 13px 13px;
   }
 }
+
+a {
+  color: #555;
+  text-decoration: none;
+  text-underline: none;
+  &:hover {
+    color: #f5713e;
+  }
+}
