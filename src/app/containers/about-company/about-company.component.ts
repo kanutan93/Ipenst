@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CompanySectionService} from '../../services/company-section.service';
 
 @Component({
   selector: 'app-about-company',
@@ -9,19 +10,10 @@ export class AboutCompanyComponent implements OnInit {
 
   currentItem = 'О компании';
   items: any[];
-  constructor() { }
+  constructor(private companySectionService: CompanySectionService) { }
 
   ngOnInit() {
-    this.items = [
-      {
-        title: 'О компании',
-        routerLink: '/company/about'
-      },
-      {
-        title: 'Вендоры',
-        routerLink: '/company/vendors'
-      }
-    ];
+    this.items = this.companySectionService.getItems();
   }
 
 }

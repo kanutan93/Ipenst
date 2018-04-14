@@ -1,0 +1,31 @@
+<app-section [currentItem]="currentItem" [items]="items">
+  <div content>
+    <div class="news">
+      <div class="item" *ngFor="let item of news">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="image">
+              <a [routerLink]="item.routerLink">
+                <img [src]="item.imageSrc">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="text">
+              <div class="title">
+                <a [routerLink]="item.routerLink">
+                  {{item.title}}
+                </a>
+              </div>
+              <div class="previewtext">
+                <p style="text-align: justify;">
+                  {{item.smallDescription}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-section>

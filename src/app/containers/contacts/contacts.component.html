@@ -1,0 +1,51 @@
+<app-section [currentItem]="currentItem" [items]="[]">
+  <div menu>
+    <div class="contact-item">
+      <div class="row">
+        <div class="col-3">
+          <i class="fa colored fa-map-marker"></i>
+        </div>
+        <div class="col-9">
+         <div class="row">
+           <div class="col-12">Адрес</div>
+           <div class="col-12 sub-info"> г. Новосибирск</div>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="row">
+        <div class="col-3">
+          <i class="fa colored fa-phone"></i>
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col-12">Телефон</div>
+            <div class="col-12 sub-info">+7 (383) 222-2-222</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="row">
+        <div class="col-3">
+          <i class="fa colored fa-envelope"></i>
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col-12">E-mail</div>
+            <div class="col-12 sub-info">info@prototype.ru</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div content>
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+    <app-consultation-block></app-consultation-block>
+  </div>
+</app-section>

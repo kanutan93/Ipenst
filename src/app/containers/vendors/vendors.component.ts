@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {VendorsService} from '../../services/vendors.service';
+import {CompanySectionService} from '../../services/company-section.service';
 
 @Component({
   selector: 'app-vendors',
@@ -9,81 +11,12 @@ export class VendorsComponent implements OnInit {
 
   currentItem = 'Вендоры';
   items: any[];
-  vendors: any[] = [
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    },
-    {
-      title: 'Fortinet',
-      routerLink: 'company/vendors/fortinet',
-      imageSrc: 'assets/vendors/1.gif',
-    }
-  ]
-  constructor() { }
+  vendors: any[];
+  constructor(private vendorsService: VendorsService, private companySectionService: CompanySectionService) { }
 
   ngOnInit() {
-    this.items = [
-      {
-        title: 'О компании',
-        routerLink: '/company/about'
-      },
-      {
-        title: 'Вендоры',
-        routerLink: '/company/vendors'
-      }
-    ];
+    this.items = this.companySectionService.getItems();
+    this.vendors = this.vendorsService.getVendors();
   }
 
 }

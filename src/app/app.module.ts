@@ -19,15 +19,33 @@ import { LeftMenuComponent } from './components/left-menu/left-menu.component';
 import { SectionComponent } from './components/section/section.component';
 import { AboutCompanyComponent } from './containers/about-company/about-company.component';
 import { VendorsComponent } from './containers/vendors/vendors.component';
+import { VendorComponent } from './containers/vendor/vendor.component';
+import {VendorsService} from './services/vendors.service';
+import {CompanySectionService} from './services/company-section.service';
+import { ContactsComponent } from './containers/contacts/contacts.component';
+import {AgmCoreModule} from '@agm/core';
+import { NewsComponent } from './containers/news/news.component';
+import {NewsSectionService} from './services/news-section.service';
+import {NewsDescriptionComponent} from './containers/news-description/news-description.component';
+import {NewsService} from './services/news.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'company' , children: [
       {path: 'about', component: AboutCompanyComponent},
       {path: 'vendors', children: [
-          {path: '', component: VendorsComponent}
-        ]}
-    ]}
+          {path: '', component: VendorsComponent},
+          {path: ':id', component: VendorComponent}
+        ]
+      }
+    ]
+  },
+  { path: 'news' , children: [
+      {path: '', component: NewsComponent},
+      {path: ':id', component: NewsDescriptionComponent}
+    ]
+  },
+  {path: 'contacts', component: ContactsComponent},
 ];
 
 @NgModule({
@@ -45,15 +63,22 @@ const routes: Routes = [
     LeftMenuComponent,
     SectionComponent,
     AboutCompanyComponent,
-    VendorsComponent
+    VendorsComponent,
+    VendorComponent,
+    ContactsComponent,
+    NewsComponent,
+    NewsDescriptionComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
-    SuiModule
+    SuiModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBSI9Td-GxEqY17Lse9SETc2I4oeQSkVa4'
+    })
   ],
-  providers: [],
+  providers: [VendorsService, CompanySectionService, NewsSectionService, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

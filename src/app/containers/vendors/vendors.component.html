@@ -6,14 +6,16 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-6" *ngFor="let vendor of vendors">
-        <div class="vendor-item">
-          <div class="vendor-image">
-            <img [src]="vendor.imageSrc">
+        <a [routerLink]="vendor.routerLink">
+          <div class="vendor-item">
+            <div class="vendor-image">
+              <img [src]="vendor.imageSrc">
+            </div>
+            <div class="vendor-text">
+              {{vendor.title}}
+            </div>
           </div>
-          <div class="vendor-text">
-            {{vendor.title}}
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>

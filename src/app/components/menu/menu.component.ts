@@ -36,10 +36,12 @@ export class MenuComponent implements OnInit {
       ]
     },
     {
-      title: 'Пресс-центр'
+      title: 'Пресс-центр',
+      routerLink: '/news'
     },
     {
-      title: 'Контакты'
+      title: 'Контакты',
+      routerLink: '/contacts'
     }
   ];
   constructor() { }

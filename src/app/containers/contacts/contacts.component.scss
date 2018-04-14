@@ -1,0 +1,29 @@
+agm-map {
+  height: 300px;
+  margin: 13px;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+  & .fa {
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    &.colored{
+      background: #f5713e;
+      width: 54px;
+      height: 54px;
+      line-height: 54px;
+      text-align: center;
+      color: #fff;
+      font-size: 29px;
+      margin: 0 20px 20px 0;
+    }
+  }
+}
+
+.sub-info {
+  color: #95979a;
+}
+
+

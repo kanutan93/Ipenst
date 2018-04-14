@@ -1,0 +1,37 @@
+.news {
+  & .item {
+    border: 1px solid #e2e7eb;
+    margin-bottom: 10px;
+    position: relative;
+    & .image {
+      height: auto;
+      text-align: center;
+      width: 100%;
+      padding: 24px 0 24px 24px;
+      & img{
+        max-height: 100%;
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+
+    & a {
+      color: #f5713e;
+      text-decoration: none!important;
+      outline: none!important;
+    }
+    & .text {
+      padding: 24px 24px 24px 0;
+    }
+    & .title {
+      font-weight: 500;
+      margin-bottom: 7px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    & .previewtext {
+      margin-bottom: 20px;
+    }
+  }
+}
