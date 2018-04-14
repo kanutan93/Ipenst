@@ -1,4 +1,27 @@
 .side-menu {
   border-bottom: 1px solid #ebeef1;
   overflow: hidden;
+  list-style: none;
+  padding: 0;
+  & li {
+    line-height: 16px;
+  }
+  &>li, &>li>a {
+    display: block;
+    position: relative;
+  }
+  & > li.active > a {
+    border-top: 1px solid #f5713e;
+    background-color: #f5713e;
+  }
+  & > li.active > a, & > li.active a:before {
+    color: #fff!important;
+  }
+  & > li > a {
+    border-top: 1px solid #ebeef1;
+    font-size: 14px;
+    position: relative;
+    text-decoration: none;
+    padding: 11px 27px 13px 13px;
+  }
 }

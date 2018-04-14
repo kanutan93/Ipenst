@@ -12,10 +12,12 @@ export class MenuComponent implements OnInit {
       title: 'Компания',
       subitems: [
         {
-          title: 'О компании'
+          title: 'О компании',
+          routerLink: '/company/about'
         },
         {
-          title: 'Вендоры'
+          title: 'Вендоры',
+          routerLink: '/company/vendors'
         },
       ]
     },

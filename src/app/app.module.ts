@@ -16,9 +16,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PhoneComponent } from './components/phone/phone.component';
 import { ConsultationBlockComponent } from './components/consultation-block/consultation-block.component';
 import { LeftMenuComponent } from './components/left-menu/left-menu.component';
+import { SectionComponent } from './components/section/section.component';
+import { AboutCompanyComponent } from './containers/about-company/about-company.component';
+import { VendorsComponent } from './containers/vendors/vendors.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent}
+  { path: '', component: HomeComponent},
+  { path: 'company' , children: [
+      {path: 'about', component: AboutCompanyComponent},
+      {path: 'vendors', children: [
+          {path: '', component: VendorsComponent}
+        ]}
+    ]}
 ];
 
 @NgModule({
@@ -33,7 +42,10 @@ const routes: Routes = [
     FooterComponent,
     PhoneComponent,
     ConsultationBlockComponent,
-    LeftMenuComponent
+    LeftMenuComponent,
+    SectionComponent,
+    AboutCompanyComponent,
+    VendorsComponent
   ],
   imports: [
     BrowserModule,

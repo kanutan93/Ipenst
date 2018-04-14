@@ -1,0 +1,20 @@
+<app-section [currentItem]="currentItem" [items]="items">
+  <div content>
+    <h2>Вендоры</h2>
+    <div class="text-before-items">
+      Наша компания плодотворно сотрудничает с ведущими национальными и международными поставщиками оборудования, мы высоко оцениваем вклад каждого участника рынка в развитие отрасли и стремимся выстраивать взаимовыгодное сотрудничество с нашими партнёрами.
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngFor="let vendor of vendors">
+        <div class="vendor-item">
+          <div class="vendor-image">
+            <img [src]="vendor.imageSrc">
+          </div>
+          <div class="vendor-text">
+            {{vendor.title}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-section>

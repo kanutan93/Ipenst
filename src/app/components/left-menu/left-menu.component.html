@@ -1,7 +1,7 @@
 <aside class="sidebar">
-  <ul class="nav nav-list side-menu">
-    <li [class]="item === currentItem ? 'active' : ''" *ngFor="let item of items">
-      <a>{{item.title}}</a>
+  <ul class="side-menu">
+    <li [class]="item.title === currentItem ? 'active' : ''" *ngFor="let item of items">
+      <a [routerLink]="item.routerLink">{{item.title}}</a>
     </li>
   </ul>
 </aside>

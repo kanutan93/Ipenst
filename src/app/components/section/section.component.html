@@ -1,0 +1,23 @@
+<div class="container container-section">
+  <div class="max-width">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <app-title [title]="currentItem"></app-title>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-4 left-menu-md">
+        <app-left-menu [currentItem]="currentItem" [items]="items"></app-left-menu>
+      </div>
+      <div class="col-md-9 col-sm-9 col-xs-8 content-md">
+        <ng-content select="[content]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
+
+

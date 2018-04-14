@@ -1,0 +1,15 @@
+.max-width {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  max-width: 1008px;
+  position: relative;
+  border-bottom: 1px solid rgba(149, 151, 154, .3);
+  @media only screen and(max-width: 767px) {
+    border-bottom: 2px solid #f5713e;
+  }
+  width: 100%;
+}
+
+.container-section {
+  margin-bottom: 30px;
+}
