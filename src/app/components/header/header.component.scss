@@ -10,10 +10,21 @@
   line-height: 87px;
   position: relative;
   z-index: 10;
+  & a {
+    font-family: 'Courier 10 Pitch';
+    color: #f5713e;
+    font-weight: bold;
+    font-size: 46px;
+    margin-top: 20px;
+  }
   @media only screen and (max-width: 767px) {
     & {
+      margin-right: 20px;
       height: 65px!important;
       line-height: 57px!important;
+    }
+    & a {
+      font-size: 24px;
     }
   }
   & img {

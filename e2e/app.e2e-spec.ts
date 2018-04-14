@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('axxtel App', () => {
+describe('Prototype App', () => {
   let page: AppPage;
 
   beforeEach(() => {
