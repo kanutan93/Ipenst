@@ -9,7 +9,7 @@
               {{item.description}}
             </div>
             <div class="more-button">
-              <app-button [text]="'Узнать больше'" [reverseColor]="true"></app-button>
+              <app-button (click)="onSolution(item.routerLink)" [text]="'Узнать больше'" [reverseColor]="true"></app-button>
             </div>
         </div>
         <div class="col-lg-6 image d-none d-lg-block">
