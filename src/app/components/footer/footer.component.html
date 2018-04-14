@@ -11,7 +11,7 @@
             <div class="bottom-menu">
               <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-4" *ngFor="let item of items">
-                  {{item.title}}
+                  <a [routerLink]="item.routerLink"> {{item.title}} </a>
                 </div>
               </div>
            </div>

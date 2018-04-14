@@ -9,16 +9,20 @@ export class FooterComponent implements OnInit {
 
   items: any[] = [
     {
-      title: 'Решения'
+      title: 'Решения',
+      routerLink: '/solutions'
     },
     {
-      title: 'Новости'
+      title: 'Новости',
+      routerLink: '/news'
     },
     {
-      title: 'Компания'
+      title: 'Компания',
+      routerLink: '/company'
     },
     {
-      title: 'Контакты'
+      title: 'Контакты',
+      routerLink: '/contacts'
     }
   ];
   constructor() { }

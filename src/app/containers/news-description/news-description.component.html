@@ -1,6 +1,9 @@
 <app-section [currentItem]="currentItem" [items]="items">
   <div content>
-    {{article.description}}
+    <div class="image">
+      <img [src]="article.imageSrc">
+    </div>
+    <span class="article">{{article.description}}</span>
     <app-consultation-block></app-consultation-block>
   </div>
 </app-section>

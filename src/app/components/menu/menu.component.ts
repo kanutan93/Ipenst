@@ -25,13 +25,28 @@ export class MenuComponent implements OnInit {
       title: 'Решения',
       subitems: [
         {
-          title: 'Информационная безопасность'
+          title: 'Тест на проникновение',
+          routerLink: '/solutions/penetration'
         },
         {
-          title: 'Сети передачи данных'
+          title: 'Защита АСУТП',
+          routerLink: '/solutions/asutp'
         },
         {
-          title: 'Документооборот'
+          title: 'Аудит',
+          routerLink: '/solutions/audit'
+        },
+        {
+          title: 'Сетевая безопасность',
+          routerLink: '/solutions/security'
+        },
+        {
+          title: 'SAM',
+          routerLink: '/solutions/sam'
+        },
+        {
+          title: 'Аттестованный хостинг',
+          routerLink: '/solutions/hosting'
         }
       ]
     },
