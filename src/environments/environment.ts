@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  API: `https://ipsecurity.herokuapp.com/api/v1/`
+  API: `https://ipsecurity.herokuapp.com/api/v1`
 };
