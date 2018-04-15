@@ -36,9 +36,13 @@ import { SecurityComponent } from './containers/solutions/security/security.comp
 import { SamComponent } from './containers/solutions/sam/sam.component';
 import { HostingComponent } from './containers/solutions/hosting/hosting.component';
 import {SearchService} from './services/search.service';
+import { FormComponent } from './components/form/form.component';
+import { FormPageComponent } from './containers/form-page/form-page.component';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'form', component: FormPageComponent},
   { path: 'company' , children: [
       {path: '', redirectTo: 'about', pathMatch: 'full'},
       {path: 'about', component: AboutCompanyComponent},
@@ -92,12 +96,15 @@ const routes: Routes = [
     AuditComponent,
     SecurityComponent,
     SamComponent,
-    HostingComponent
+    HostingComponent,
+    FormComponent,
+    FormPageComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
+    FormsModule,
     SuiModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBSI9Td-GxEqY17Lse9SETc2I4oeQSkVa4'

@@ -1,0 +1,59 @@
+<form>
+  <ng-container *ngFor="let task of tasks">
+    <p style="text-align: justify;" class="text-lg">
+      {{task.title}}
+    </p>
+    <ng-container *ngIf="task.type === 'checkbox'">
+      <fieldset class="form-group">
+        <div class="form-check"  *ngFor="let option of task.options">
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" [id]="option.id">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{option.title}}</span>
+          </label>
+        </div>
+      </fieldset>
+    </ng-container>
+
+    <ng-container *ngIf="task.type === 'text'">
+      <div class="form-group">
+        <input type="text" class="form-control" [id]="task.id">
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="task.type === 'email'">
+      <div class="form-group">
+        <input type="email" class="form-control" [id]="task.id">
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="task.type === 'radio'">
+      <fieldset class="form-group">
+        <div class="form-check"  *ngFor="let option of task.options">
+          <label class="custom-control custom-radio">
+            <input [id]="option.id" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{option.title}}</span>
+          </label>
+        </div>
+      </fieldset>
+    </ng-container>
+  </ng-container>
+
+
+
+  <label class="custom-control custom-radio">
+    <input id="radio1" name="radio" type="radio" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Toggle this custom radio</span>
+  </label>
+
+  <label class="custom-control custom-radio">
+    <input id="radio2" name="radio" type="radio" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Or toggle this other custom radio</span>
+  </label>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
