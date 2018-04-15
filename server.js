@@ -41,12 +41,26 @@ app.post('/api/v1', (req, res) => {
 
   const messageClient = {
     from: 'app93897030@heroku.com',
+    to: req.body.email,
+    subject: 'Prototype',
+    html: msg
+  };
+
+  const messageProducer = {
+    from: 'app93897030@heroku.com',
     to: 'kanutan93@gmail.com',
-    subject: 'Prototype. Заявка на тестирование.',
+    subject: 'Prototype. . Заявка на тестирование.',
     html: msg
   };
 
   client.sendMail(messageClient, (error, info) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  client.sendMail(messageProducer, (error, info) => {
     if (error) {
       console.log(error);
     } else {
