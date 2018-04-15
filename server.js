@@ -82,9 +82,11 @@ app.post('/api/v1', (req, res) => {
 });
 
 app.use('/', express.static(__dirname + '/dist'));
-app.all('*', (req, res) =>  {
-  res.redirect(`https://ipsecurity.herokuapp.com/`);
+// app.all('*', (req, res) =>  {
+//   res.redirect(`https://ipsecurity.herokuapp.com/`);
+// });
+
+
+app.listen(port, () => {
+  console.log('server successfully started on port '+ port);
 });
-
-
-app.listen(port);
