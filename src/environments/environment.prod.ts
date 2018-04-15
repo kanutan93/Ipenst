@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API: `https://ibsecurity.herokuapp.com/api/v1`
+  API: `https://ibsec.herokuapp.com/api/v1`
 };
