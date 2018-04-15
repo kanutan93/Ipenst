@@ -1,6 +1,6 @@
 const express = require('express'),
   app = express(),
-  port = process.env.PORT || 3000;
+  port = process.env.PORT || 1337;
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
@@ -42,19 +42,19 @@ app.post('/api/v1', (req, res) => {
     html: msg
   };
 
-  const messageProducer1 = {
-    from: 'app93885195@heroku.com',
-    to: 'kanutan93@gmail.com',
-    subject: 'Prototype. Заявка на тестирование.',
-    html: msg
-  };
-
-  const messageProducer2 = {
-    from: 'app93885195@heroku.com',
-    to: 'kanutan93@gmail.com',
-    subject: 'Prototype. Заявка на тестирование.',
-    html: msg
-  };
+  // const messageProducer1 = {
+  //   from: 'app93885195@heroku.com',
+  //   to: 'kanutan93@gmail.com',
+  //   subject: 'Prototype. Заявка на тестирование.',
+  //   html: msg
+  // };
+  //
+  // const messageProducer2 = {
+  //   from: 'app93885195@heroku.com',
+  //   to: 'kanutan93@gmail.com',
+  //   subject: 'Prototype. Заявка на тестирование.',
+  //   html: msg
+  // };
 
 
 
@@ -65,20 +65,20 @@ app.post('/api/v1', (req, res) => {
       console.log('Email sent: ' + info.response);
     }
   });
-  client.sendMail(messageProducer1, (error, info) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-  client.sendMail(messageProducer2, (error, info) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+  // client.sendMail(messageProducer1, (error, info) => {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     console.log('Email sent: ' + info.response);
+  //   }
+  // });
+  // client.sendMail(messageProducer2, (error, info) => {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     console.log('Email sent: ' + info.response);
+  //   }
+  // });
 });
 
 app.use('/', express.static(__dirname + '/dist'));
