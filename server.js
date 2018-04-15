@@ -1,6 +1,6 @@
 const express = require('express'),
   app = express(),
-  port = 8080;
+  port = process.env.PORT || 8080;
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
@@ -83,7 +83,7 @@ app.post('/api/v1', (req, res) => {
 
 app.use('/', express.static(__dirname + '/dist'));
 app.all('*', (req, res) =>  {
-  res.redirect('https://ipsecurity.herokuapp.com:8080/');
+  res.redirect(`https://ipsecurity.herokuapp.com/`);
 });
 
 
