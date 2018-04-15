@@ -12,11 +12,11 @@
 
 .btn {
   display: inline-block;
+  white-space: pre-wrap;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  white-space: nowrap;
   line-height: 1.428571429;
   border-radius: 4px;
   text-transform: uppercase;
@@ -30,6 +30,13 @@
   -ms-transition: background-color .3s ease;
   -o-transition: background-color .3s ease;
   -webkit-transition: background-color .3s ease;
+  @media only screen and (max-width: 576px){
+    font-size: 10px;
+    line-height: 12px;
+    padding: 7px 14px 6px;
+    border-radius: 1px;
+    margin: 0 10px 10px;
+  }
 }
 
 .btn-xs {

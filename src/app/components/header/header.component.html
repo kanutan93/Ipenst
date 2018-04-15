@@ -1,14 +1,14 @@
 <div class="logo_and_menu-row">
   <div class="max-width">
     <div class="row">
-      <div class="col-md-3 col-sm-4 col-6">
+      <div class="col-md-3 col-sm-6 col-12">
         <div class="logo">
           <a routerLink="">
             <span>Prototype</span>
           </a>
         </div>
       </div>
-      <div class="col-md-9 col-sm-8 col-6">
+      <div class="col-md-9 col-sm-6  col-12">
         <div class="row">
           <div class="col-md-4">
             <div class="top-description d-none d-lg-block">
@@ -21,10 +21,12 @@
             <!--<button class="btn btn-responsive-nav pull-right d-md-none">-->
               <!--<i class="fa fa-bars"></i>-->
             <!--</button>-->
-            <div class="callback pull-right d-none d-md-block">
-              <app-button [text]="'Заказать звонок'"></app-button>
+            <div class="callback pull-right ">
+              <app-button [reverseColor]="true" [text]="'Тестирование на проникновение'"></app-button>
             </div>
-           <app-phone></app-phone>
+            <div class="d-none d-lg-block">
+              <app-phone></app-phone>
+            </div>
           </div>
         </div>
       </div>
