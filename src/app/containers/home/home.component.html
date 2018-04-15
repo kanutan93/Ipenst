@@ -43,7 +43,7 @@
         <div class="col-md-6 col-sm-6">
           <div class="news front">
             <app-title [title]="'Все новости'"></app-title>
-            <app-button [text]="'Новости'" (click)="onNews($event)" class="news-button"></app-button>
+            <app-button [text]="'Новости'" (click)="onNews()" class="news-button"></app-button>
             <div class="col-md-12 col-sm-12" *ngFor="let item of news">
               <div class="item">
                 <a [routerLink]="item.routerLink">
