@@ -17,11 +17,11 @@ export class AppComponent {
         $('#toTop').fadeOut();
       }
       console.log($('#footer').height())
-      if ($(window).scrollTop() + $(window).height() < $(document).height() - 70) {
+      if ($(window).scrollTop() + $(window).height() < $(document).height() - 100) {
         $('#toTop').css('position', 'fixed');
         $('#toTop').css('bottom', '30px');
       }
-      if ($(window).scrollTop() + $(window).height() > $(document).height() - 70) {
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
         $('#toTop').css('position', 'fixed');
         $('#toTop').css('bottom', '140px');
       }
