@@ -14,6 +14,10 @@ var client = nodemailer.createTransport({
 
 app.use(bodyParser.json());
 
+app.get('/api/v1', (req, res) => {
+  res.send('check');
+})
+
 app.post('/api/v1', (req, res) => {
   let msg = '';
   msg += '<h2>Спасибо за заявку. Специалист свяжется с вами в ближайшее время</h2>';
@@ -37,7 +41,7 @@ app.post('/api/v1', (req, res) => {
 
   const messageClient = {
     from: 'app93885195@heroku.com',
-    to: req.body.email,
+    to: 'kanutan93@gmail.com',
     subject: 'Prototype. Заявка на тестирование.',
     html: msg
   };
