@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,25 @@ export class AppComponent {
   title = 'app';
   constructor() {
 
-    const scrollFunction = () => {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById('scrollToTop').style.opacity = '1';
+    $(window).scroll(() => {
+      if ($(window).scrollTop()) {
+        $('#toTop').fadeIn();
       } else {
-        document.getElementById('scrollToTop').style.opacity = '0';
+        $('#toTop').fadeOut();
       }
-    };
-    window.onscroll = scrollFunction;
+      console.log($('#footer').height())
+      if ($(window).scrollTop() + $(window).height() < $(document).height() - 70) {
+        $('#toTop').css('position', 'fixed');
+        $('#toTop').css('bottom', '30px');
+      }
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 70) {
+        $('#toTop').css('position', 'fixed');
+        $('#toTop').css('bottom', '140px');
+      }
+    });
   }
 
   topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    $("html, body").animate({scrollTop: 0}, 1000);
   }
 }
