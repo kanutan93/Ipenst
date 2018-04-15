@@ -41,6 +41,7 @@ import { FormPageComponent } from './containers/form-page/form-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormService} from './services/form.service';
 import {Http, HttpModule} from '@angular/http';
+import { SucessFormComponent } from './containers/sucess-form/sucess-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -71,6 +72,7 @@ const routes: Routes = [
     ]
   },
   {path: 'contacts', component: ContactsComponent},
+  {path: 'success', component: SucessFormComponent}
 ];
 
 @NgModule({
@@ -100,7 +102,8 @@ const routes: Routes = [
     SamComponent,
     HostingComponent,
     FormComponent,
-    FormPageComponent
+    FormPageComponent,
+    SucessFormComponent
   ],
   imports: [
     BrowserModule,
