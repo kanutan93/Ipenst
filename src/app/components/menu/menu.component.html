@@ -22,30 +22,22 @@
         <a class="item" [routerLink]="item.routerLink">{{item.title}}</a>
       </ng-container>
     </div>
-    <div class="d-md-none">
-      <div class="ui pointing dropdown link item" suiDropdown>
-        <span class="text">Каталог</span>
-        <i class="dropdown icon"></i>
-        <div class="menu" suiDropdownMenu>
-          <ng-container *ngFor="let item of items">
-            <a [routerLink]="item.routerLink">
-              <div class="item">
-                <span class="text">{{item.title}}</span>
-              </div>
-            </a>
-          </ng-container>
-        </div>
+      <div class="d-md-none" *ngFor="let item of smallItems">
+          <div class="ui pointing dropdown link item" suiDropdown>
+            <span class="text">{{item.title}}</span>
+            <i class="dropdown icon"></i>
+            <div class="menu" suiDropdownMenu>
+              <ng-container *ngFor="let subitem of item.subitems">
+                <ng-container>
+                  <a [routerLink]="subitem.routerLink">
+                    <div class="item">
+                      <span class="text" >{{subitem.title}}</span>
+                    </div>
+                  </a>
+                </ng-container>
+              </ng-container>
+            </div>
+          </div>
       </div>
-    </div>
-    <span class="item">
-      <sui-search placeholder="Поиск"
-                  [hasIcon]="true"
-                  [retainSelectedResult]="false"
-                  [searchDelay]="0"
-                  [options]="searchItemsLabel"
-                  (resultSelected)="onSearchSelected($event)"></sui-search>
-    </span>
-
-  </div>
 </div>
-
+</div>
