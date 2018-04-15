@@ -1,59 +1,55 @@
-<form>
-  <ng-container *ngFor="let task of tasks">
+<form [formGroup]="form" (ngSubmit)="onFormSubmit(form)">
+  <ng-container *ngFor="let task of tasks; let i = index">
     <p style="text-align: justify;" class="text-lg">
       {{task.title}}
     </p>
     <ng-container *ngIf="task.type === 'checkbox'">
-      <fieldset class="form-group">
-        <div class="form-check"  *ngFor="let option of task.options">
-          <label class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" [id]="option.id">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">{{option.title}}</span>
-          </label>
-        </div>
-      </fieldset>
+      <form [formGroup]="form">
+        <fieldset class="form-group" *ngFor="let option of task.options">
+          <div class="form-check"  >
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" [value]="option" (change)="onCheckChange($event, option, task.id)">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{option.title}}</span>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+
     </ng-container>
 
     <ng-container *ngIf="task.type === 'text'">
-      <div class="form-group">
-        <input type="text" class="form-control" [id]="task.id">
-      </div>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <input type="text" required class="form-control" [id]="task.id" [formControlName]="task.id">
+        </div>
+      </form>
     </ng-container>
 
     <ng-container *ngIf="task.type === 'email'">
-      <div class="form-group">
-        <input type="email" class="form-control" [id]="task.id">
-      </div>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <input type="email" required class="form-control" [id]="task.id" [formControlName]="task.id">
+        </div>
+      </form>
+
     </ng-container>
 
     <ng-container *ngIf="task.type === 'radio'">
-      <fieldset class="form-group">
-        <div class="form-check"  *ngFor="let option of task.options">
-          <label class="custom-control custom-radio">
-            <input [id]="option.id" name="radio" type="radio" class="custom-control-input">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">{{option.title}}</span>
-          </label>
-        </div>
-      </fieldset>
+      <form [formGroup]="form">
+        <fieldset class="form-group" *ngFor="let option of task.options">
+          <div class="form-check" >
+            <label class="custom-control custom-radio">
+              <input [id]="option.id" type="radio" class="custom-control-input" [value]="option" [formControlName]="task.id">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{option.title}}</span>
+            </label>
+          </div>
+        </fieldset>
+      </form>
     </ng-container>
   </ng-container>
 
-
-
-  <label class="custom-control custom-radio">
-    <input id="radio1" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Toggle this custom radio</span>
-  </label>
-
-  <label class="custom-control custom-radio">
-    <input id="radio2" name="radio" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Or toggle this other custom radio</span>
-  </label>
-
-
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" [disabled]="!form.valid" class="btn btn-default">Отправить заявку</button>
 </form>
+<h1> Стоимость: {{sum}}</h1>

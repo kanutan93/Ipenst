@@ -38,7 +38,7 @@ import { HostingComponent } from './containers/solutions/hosting/hosting.compone
 import {SearchService} from './services/search.service';
 import { FormComponent } from './components/form/form.component';
 import { FormPageComponent } from './containers/form-page/form-page.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -104,6 +104,7 @@ const routes: Routes = [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
     FormsModule,
     SuiModule,
     AgmCoreModule.forRoot({

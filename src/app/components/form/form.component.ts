@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -6,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+  form: FormGroup;
+  sum: any = 0;
   tasks = [
     {
       type: 'checkbox',
+      id: 'taskPenetration',
       title: 'Какие задачи преследуются проведением тестирования на проникновение? :',
       options: [
         {
-          id: 1,
           title: 'Выполнение требования регулятора или стандарта по безопасности',
           value: 10000
         },
         {
-          id: 2,
           title: 'Превентивное выявление уязвимостей системы',
           value: 10000
         }
@@ -25,47 +27,43 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'checkbox',
+      id: 'taskMethod',
       title: 'Какой метод тестирования Вас интересует? :',
       options: [
         {
-          id: 3,
           title: 'Метод "White box" - проводится после получения исполнителем всех запрошенных данных.',
           value: 10000
         },
         {
-          id: 4,
           title: 'Метод "Black box" - проводится после предоставления заказчиком минимального количества данных.',
           value: 10000
         }
       ]
     },
     {
-      id: 5,
+      id: 'whoIP',
       type: 'text',
       title: 'Какие IP-адреса, Web-сайты, приложения, коммутационное оборудование будут участвовать в тестировании?:',
       value: ''
     },
     {
       type: 'checkbox',
+      id: 'whatResult',
       title: 'Какие цели тестирования Вас интересуют?:',
       options: [
         {
-          id: 6,
           title: 'Получение полного перечня уязвимостей',
           value: 10000
         },
         {
-          id: 7,
           title: 'Подтверждение существования уязвимостей без их эксплуатации',
           value: 10000
         },
         {
-          id: 8,
           title: 'Проверка реакции систем защиты на попытку проникновения',
           value: 10000
         },
         {
-          id: 9,
           title: 'Эксплуатация уязвимостей. Действия могут привести к нарушению стабильной работы системы',
           value: 10000
         }
@@ -73,30 +71,26 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'checkbox',
+      id: 'whatObject',
       title: 'Какие объекты предприятия следует подвергнуть тестированию?:',
       options: [
         {
-          id: 10,
           title: 'Приложения',
           value: 10000
         },
         {
-          id: 11,
           title: 'Веб-сайт',
           value: 10000
         },
         {
-          id: 12,
           title: 'Сеть',
           value: 10000
         },
         {
-          id: 13,
           title: 'Сетевые приложения',
           value: 10000
         },
         {
-          id: 14,
           title: 'Беспроводные коммуникации',
           value: 10000
         },
@@ -104,15 +98,14 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'checkbox',
+      id: 'extraTest',
       title: 'Требуется ли приведение дополнительных тестов?:',
       options: [
         {
-          id: 15,
           title: 'Физическое проникновение на предприятие в обход систем безопасности',
           value: 10000
         },
         {
-          id: 16,
           title: 'Получение конфиденциальной информации от сотрудников методом социальной инженерии',
           value: 10000
         }
@@ -120,25 +113,22 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'radio',
+      id: 'delay',
       title: 'Укажите периодичность и(или) способ информирования о статусе тестирования?:',
       options: [
         {
-          id: 17,
           title: 'Полный отчет обо всех найденных уязвимостях по окончании тестирования',
           value: 10000
         },
         {
-          id: 18,
           title: 'Информирование о каждой найденной уязвимости',
           value: 10000
         },
         {
-          id: 19,
           title: 'Ежедневное информирование о статусе тестирования',
           value: 10000
         },
         {
-          id: 20,
           title: 'Информирование только о критических уязвимостях сразу после их нахождения',
           value: 10000
         }
@@ -146,15 +136,14 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'radio',
+      id: 'prodOrDev',
       title: 'Будет ли проходить тестирование в уже рабочей ("боевой") и настроенной среде?:',
       options: [
         {
-          id: 17,
           title: 'Да',
           value: 10000
         },
         {
-          id: 18,
           title: 'Нет',
           value: 0
         }
@@ -162,15 +151,14 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'radio',
+      id: 'sogl',
       title: 'Будет ли проводиться согласование со службой безопасности предприятия?:',
       options: [
         {
-          id: 19,
           title: 'Да',
           value: 10000
         },
         {
-          id: 20,
           title: 'Нет',
           value: 0
         }
@@ -178,15 +166,14 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'radio',
+      id: 'warn',
       title: 'Предупреждено ли руководство компании о предстоящем тестировании и о том, что оно проводится с целью найти/доказать уязвимости в системе?:',
       options: [
         {
-          id: 21,
           title: 'Да',
           value: 10000
         },
         {
-          id: 22,
           title: 'Нет',
           value: 0
         }
@@ -194,43 +181,93 @@ export class FormComponent implements OnInit {
     },
     {
       type: 'radio',
+      id: 'warnProd',
       title: 'Предупреждено ли руководство компании о последствиях при проведении тестирования на рабочем ("боевом") оборудовании/системе?:',
       options: [
         {
-          id: 23,
           title: 'Да',
           value: 10000
         },
         {
-          id: 24,
           title: 'Нет',
           value: 0
         }
       ]
     },
     {
-      id: 25,
+      id: 'name',
       type: 'text',
       title: 'Ваше имя',
       value: ''
     },
     {
-      id: 26,
+      id: 'phone',
       type: 'text',
       title: 'Телефон',
       value: ''
     },
     {
-      id: 27,
+      id: 'email',
       type: 'email',
       title: 'Email',
       value: ''
     },
   ];
-  constructor() { }
+  constructor(public fb: FormBuilder) {
+    this.form = fb.group({
+      'taskPenetration': new FormArray([]),
+      'taskMethod': new FormArray([]),
+      'whoIP': '',
+      'whatObject': new FormArray([]),
+      'extraTest': new FormArray([]),
+      'delay': '',
+      'sogl': '',
+      'warn': '',
+      'whatResult': new FormArray([]),
+      'prodOrDev': '',
+      'warnProd': '',
+      'name': '',
+      'phone': '',
+      'email': '',
+    });
+    this.form.valueChanges.subscribe((values) => {
+      this.sum = 0;
+      this.getSum(values);
+    });
+  }
 
   ngOnInit() {
 
+  }
+
+  onFormSubmit(form) {
+    console.log(form);
+  }
+
+  getSum(values) {
+    Object.keys(values).forEach(item => {
+      if (values[item] instanceof Array) {
+        values[item].forEach(checkItem => {
+          this.sum += checkItem.value;
+        });
+      } else if (typeof values[item] !== 'string') {
+        this.sum += values[item].value;
+      }
+    });
+  }
+
+  onCheckChange(event, option, taskiD) {
+    const formArray: FormArray = this.form.get(taskiD) as FormArray;
+    if (event.target.checked) {
+      formArray.push(new FormControl(option));
+    } else {
+      formArray.controls.forEach((ctrl: FormControl, i) => {
+        if (ctrl.value.id === option.id) {
+          formArray.removeAt(i);
+          return;
+        }
+      });
+    }
   }
 
 }

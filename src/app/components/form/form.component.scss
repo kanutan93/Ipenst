@@ -52,3 +52,44 @@
 .custom-radio .custom-control-indicator {
   border-radius: 50%;
 }
+
+.btn-default:hover {
+  color: #f5713e !important;
+  border: 1px solid #f5713e;
+  background: #ffffff;
+}
+
+.btn-default {
+  background-color: #f5713e;
+  border-color: #f5713e;
+  color: #ffffff !important;
+}
+
+.btn {
+  display: inline-block;
+  white-space: pre-wrap;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 10px 10px 0;
+  font-size: 12px;
+  padding: 7px 12px 8px;
+  overflow: hidden;
+  transition: background-color .3s ease;
+  -moz-transition: background-color .3s ease;
+  -ms-transition: background-color .3s ease;
+  -o-transition: background-color .3s ease;
+  -webkit-transition: background-color .3s ease;
+  @media only screen and (max-width: 576px){
+    font-size: 10px;
+    line-height: 12px;
+    padding: 7px 14px 6px;
+    border-radius: 1px;
+    margin: 0 10px 10px;
+  }
+}

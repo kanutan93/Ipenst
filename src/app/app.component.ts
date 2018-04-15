@@ -16,7 +16,6 @@ export class AppComponent {
       } else {
         $('#toTop').fadeOut();
       }
-      console.log($('#footer').height())
       if ($(window).scrollTop() + $(window).height() < $(document).height() - 100) {
         $('#toTop').css('position', 'fixed');
         $('#toTop').css('bottom', '30px');
