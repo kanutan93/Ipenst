@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 var client = nodemailer.createTransport({
   service: 'SendGrid',
   auth: {
-    user: 'app93894600@heroku.com',
-    pass: 'q3qur7le2085'
+    user: 'app93895415@heroku.com',
+    pass: '0rjfyixi4145'
   }
 });
 
@@ -40,7 +40,7 @@ app.post('/api/v1', (req, res) => {
   msg += `<h2>Сумма: <span style="color: green">${req.body.sum}</span></h2>`;
 
   const messageClient = {
-    from: 'app93894600@heroku.com',
+    from: 'app93895415@heroku.com',
     to: 'kanutan93@gmail.com',
     subject: 'Prototype. Заявка на тестирование.',
     html: msg
@@ -57,7 +57,7 @@ app.post('/api/v1', (req, res) => {
 
 app.use('/', express.static(__dirname + '/dist'));
 app.all('*', (req, res) =>  {
-  res.redirect(`https://ipsecurity.herokuapp.com/`);
+  res.redirect(`https://ibsecurity.herokuapp.com/`);
 });
 app.listen(port, () => {
   console.log('server successfully started on port '+ port);
