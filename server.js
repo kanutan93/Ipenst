@@ -49,7 +49,7 @@ app.post('/api/v1', (req, res) => {
   const messageProducer = {
     from: 'app93897030@heroku.com',
     to: 'kanutan93@gmail.com',
-    subject: 'Prototype. . Заявка на тестирование.',
+    subject: 'Prototype. Заявка на тестирование.',
     html: msg
   };
 
