@@ -39,6 +39,8 @@ import {SearchService} from './services/search.service';
 import { FormComponent } from './components/form/form.component';
 import { FormPageComponent } from './containers/form-page/form-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormService} from './services/form.service';
+import {Http, HttpModule} from '@angular/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -107,6 +109,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     SuiModule,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBSI9Td-GxEqY17Lse9SETc2I4oeQSkVa4'
     })
@@ -117,7 +120,8 @@ const routes: Routes = [
     NewsSectionService,
     NewsService,
     SolutionSectionService,
-    SearchService
+    SearchService,
+    FormService
   ],
   bootstrap: [AppComponent]
 })

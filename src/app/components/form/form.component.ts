@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormService} from '../../services/form.service';
 
 @Component({
   selector: 'app-form',
@@ -213,7 +214,7 @@ export class FormComponent implements OnInit {
       value: ''
     },
   ];
-  constructor(public fb: FormBuilder) {
+  constructor(public fb: FormBuilder, private formService: FormService) {
     this.form = fb.group({
       'taskPenetration': new FormArray([]),
       'taskMethod': new FormArray([]),
@@ -241,7 +242,18 @@ export class FormComponent implements OnInit {
   }
 
   onFormSubmit(form) {
-    console.log(form);
+    const request: any = {};
+    request.tasks  = Object.keys(form.value)
+      .filter(key => {
+        return form.value[key] !== '' && ((form.value[key].length && form.value[key].length > 0) || form.value[key].value);
+      })
+      .map(key => {
+        const currentTask = this.tasks.find(task => task.id === key);
+        return Object.assign({key: key, title: currentTask.title, value: form.value[key]});
+    });
+    request.email = form.value['email'];
+    request.sum = this.sum;
+    this.formService.onPost(request);
   }
 
   getSum(values) {
