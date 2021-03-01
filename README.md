@@ -1,2 +1,2 @@
 # IPENST
-Frontend Application for a cybersecurity company written in Angular 2.
+Frontend Application prototype for a cybersecurity company written in Angular 2.
